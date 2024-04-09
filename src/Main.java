@@ -1,7 +1,47 @@
 import java.util.Scanner;
 
 public class Main {
+
+    //VOID means no return value
+    public static void announceDeveloperTeaTime() {
+        System.out.println("Waiting for developr tea time...");
+        System.out.println("Type in a random word and press Enter to start developer tea time.");
+        Scanner input = new Scanner(System.in);
+        input.next();
+        System.out.println("It is developer tea time!");
+    }
+
+    //DOUBLE means that the function will return a double
+    public static double calculateTotalMealPrice(double listedMealPrice, double tipRate, double taxRate) {
+        double tip = tipRate * listedMealPrice;
+        double tax = taxRate * listedMealPrice;
+        double result = listedMealPrice + tip + tax;
+        return result;
+    }
+
+    public static double calculateSalary(int hoursPerWeek, double hourlyWage, int vacationDays) {
+        if (hoursPerWeek < 0) {
+            return -1;
+        }
+        if (hourlyWage < 0) {
+            return -1;
+        }
+        if (vacationDays < 0) {
+            return -1;
+        }
+        return (hoursPerWeek * hourlyWage * 52) - (vacationDays * (hourlyWage * 8));
+    }
+
     public static void main(String[] args) {
+
+        Student studentA = new Student("Ryan","Wilson",2018,3.3,"Computer Science");
+        Student studentB = new Student("Alicia","Vallario",2017,3.7,"Communications");
+
+        studentA.incrementExpectedGradYear();
+        System.out.println(studentA.gradYear);
+
+//        System.out.println(calculateSalary(40,15,8));
+
 //        int studentAge = 15;
 //        double studentGPA = 3.45;
 //        String studentFirstName = "Ryan";
@@ -87,6 +127,34 @@ public class Main {
 //
 //  --------------------------------------------------------------------------------------------
 //
+//
+//        System.out.println("Welcome the total meal price calculator.");
+//        System.out.println("Please enter the total meal price.");
+//        Scanner input = new Scanner(System.in);
+//        double listedMeal = input.nextDouble();
+//        System.out.println("Please enter the tip rate as a decimal. Ex: 12% = .12");
+//        double tipAmount = input.nextDouble();
+//        System.out.println("Please enter the tax rate as a decimal. Ex: 12% = .12");
+//        double taxAmount = input.nextDouble();
+//        double totalPrice = calculateTotalMealPrice(listedMeal, tipAmount, taxAmount);
+//        System.out.println("The total meal price is: " + totalPrice);
+//        System.out.println("How many people are splitting the bill?");
+//        int amountOfPeople = input.nextInt();
+//        double perPerson = totalPrice / amountOfPeople;
+//        System.out.println("The total price per person is: " + perPerson);
+//
+//  --------------------------------------------------------------------------------------------
+//
+//        Triangle triangleA = new Triangle(15, 8, 15,8,17);
+//        Triangle triangleB = new Triangle(3,2.598, 3,3,3);
+//
+//        double triangleAArea = triangleA.findArea();
+//        System.out.println(triangleAArea);
+//        System.out.println(triangleB.base);
+//        System.out.println(Triangle.numOfSides);
+//        System.out.println(triangleA.numOfSides); //same as the above line since numOfSides is a static attribute of triangle
+//
+
 
     }
 }
